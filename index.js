@@ -3,12 +3,15 @@ const app = express();
 const port = 9090;
 const router = require("./routers/index");
 const db = require("./models/index");
+const { cors } = require("./config/cors");
 
 
 
 (async () => {
     db.sequelize.sync();
 }) ();
+
+app.use(cors);
 
 app.use(express.json());
 
