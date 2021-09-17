@@ -29,6 +29,10 @@ module.exports = {
             throw Error("Song not found");
         }
         return await SongRepository.deleteOne(id);
+    },
+
+    isLonger: (song1, song2) => {
+        return song1.duration>=song2.duration;
     }
 
 
